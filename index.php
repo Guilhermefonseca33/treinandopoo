@@ -12,7 +12,7 @@
 </head>
 <body>
 	 <?php
-	 	$fruta = conexao::getInstance();
+	 	$fruta = new Frutas();
 
 	 	// Cadastro de Frutas
 
@@ -20,12 +20,12 @@
 	 		$nome = $_POST['nome'];
 	 		$preco = $_POST['preco'];
 	 		$quantidade = $_POST['quantidade'];
-	 		$id_tipo_fruta = $_POST['id_tipo_fruta'];
+	 		$tipo_fruta_id = $_POST['tipo_fruta_id'];
 
 	 		$fruta->setNome($nome);
-	 		$fruta->setPreco($preco);
 	 		$fruta->setQuantidade($quantidade);
-	 		$fruta->setId_tipo_fruta($id_tipo_fruta);
+	 		$fruta->setPreco($preco);
+	 		$fruta->setTipo_Fruta_id($tipo_fruta_id);
 
 
 	 		$fruta->inserirFruta();
@@ -37,7 +37,7 @@
 				<p> <label> Nome </label> <input type="text" name="nome" placeholder="Digite o nome da fruta"> </p>
 				<p> <label> Preço </label> <input type="text" name="preco" placeholder="Digite o valor da fruta"> </p>
 				<p> <label> Quantidade </label> <input type="text" name="quantidade" placeholder="Digite a quantidade"> </p>
-				<p> <label> Tipo da Fruta </label> <select name="id_tipo_fruta">
+				<p> <label> Tipo da Fruta </label> <select name="tipo_fruta_id">
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
@@ -47,5 +47,6 @@
 				
 			</form>	 	
 	 </div>
+
 </body>
 </html>

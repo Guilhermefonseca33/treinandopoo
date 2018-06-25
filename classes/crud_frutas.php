@@ -2,11 +2,10 @@
 
 require_once 'classes/conexao.php';
 	abstract class crudFrutas extends Conexao {
-    
     private $nome;
     private $quantidade;
     private $preco;
-    private $id_tipo_fruta;
+    private $tipo_fruta_id;
 
   
     public function getNome() {
@@ -33,12 +32,12 @@ require_once 'classes/conexao.php';
         $this->preco = $preco;
     }
   
-    public function getId_tipo_fruta() {
-        return $this->id_tipo_fruta;
+    public function getTipo_Fruta_id() {
+        return $this->tipo_fruta_id;
     }
   
-    public function setId_tipo_fruta($id_tipo_fruta) {
-        $this->id_tipo_fruta = $id_tipo_fruta;
+    public function setTipo_Fruta_id($tipo_fruta_id) {
+        $this->tipo_fruta_id = $tipo_fruta_id;
     }  
      
 } 

@@ -1,6 +1,8 @@
 <?php
 
 require_once 'classes/crud_frutas.php';
+require_once 'classes/conexao.php';
+
 
 
 class Frutas extends crudFrutas {
@@ -19,12 +21,12 @@ class Frutas extends crudFrutas {
 		return $st->fetchAll();
 	}
 	public function inserirFruta(){
-		$sql = "INSERT INTO frutas (nome, preco, quantidade, id_tipo_fruta) VALUES (:nome, :preco, :quantidade, :id_tipo_fruta)";
+		$sql = "INSERT INTO frutas (nome, preco, quantidade, tipo_fruta_id) VALUES (:nome, :preco, :quantidade, :tipo_fruta_id)";
 		$st = Conexao::prepare($sql);
-		$st=bindParam(':nome', $this->nome);
-		$st=bindParam(':preco', $this->preco);
-		$st=bindParam(':quantidade', $this->quantidade);
-		$st=bindParam(':id_tipo_fruta', $this->id_tipo_fruta);
+		$st->bindParam(':nome', $this->nome);
+		$st->bindParam(':preco', $this->preco);
+		$st->bindParam(':quantidade', $this->quantidade);
+		$st->bindParam(':tipo', $this->tipo_fruta_id);
 	}
 
 	public function attFruta($id){
