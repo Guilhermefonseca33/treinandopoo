@@ -26,7 +26,7 @@ class Frutas extends crudFrutas {
 		$st->bindParam(':nome', $this->nome);
 		$st->bindParam(':preco', $this->preco);
 		$st->bindParam(':quantidade', $this->quantidade);
-		$st->bindParam(':tipo', $this->tipo_fruta_id);
+		$st->bindParam(':tipo_fruta_id', $this->tipo_fruta_id);
 	}
 
 	public function attFruta($id){
